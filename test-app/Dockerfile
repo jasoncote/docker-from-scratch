@@ -5,3 +5,5 @@ USER node
 RUN mkdir /home/node/nextapp
 
 WORKDIR /home/node/nextapp
+
+CMD [ "npm ci" ]
