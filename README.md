@@ -1,5 +1,5 @@
 # Example docker setup
-To start, run `docker-compose up -d`
+To start, run `docker-compose up`
 
 Then visit 
 - Apache: `localhost`
