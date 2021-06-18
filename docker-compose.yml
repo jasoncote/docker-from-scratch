@@ -1,0 +1,23 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3010:3010"
+    volumes: 
+      - ./frontend:/home/node/frontend:cached
+    command: node server.js
+  backend:
+    image: ten7/flight-deck-web:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend/src:/var/www/html:cached
+      - ./backend/config:/var/www/config:cached
+  nextapp:
+    build: ./test-app
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./test-app:/home/node/nextapp:cached
+    command: npm run dev
